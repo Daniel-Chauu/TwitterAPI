@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import userRouter from './user.routes'
+import userRouter from './users.routes'
 const rootRouter = Router()
 
-rootRouter.use('/user', userRouter)
+rootRouter.use('/users', userRouter)
 
 export default rootRouter
