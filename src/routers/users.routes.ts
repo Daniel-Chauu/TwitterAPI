@@ -1,9 +1,8 @@
 import { Request, Response, Router } from 'express'
+import userController from '~/controllers/users.controller'
 
 const userRouter = Router()
 
-userRouter.get('/', async (req: Request, res: Response) => {
-  res.json('Hello World User')
-})
+userRouter.post('/register', userController.register)
 
 export default userRouter
