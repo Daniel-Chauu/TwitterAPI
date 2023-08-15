@@ -15,4 +15,14 @@ const checkEmptyObj = (obj: object) => {
   return Object.keys(obj).length === 0
 }
 
-export { logError, checkEmptyObj }
+const pick = <T>(obj: T, array: (keyof T)[]): Partial<T> => {
+  const pickDate: Partial<T> = {}
+  array.forEach((item) => {
+    if (obj[item]) {
+      pickDate[item] = obj[item]
+    }
+  })
+  return pickDate
+}
+
+export { logError, checkEmptyObj, pick }
