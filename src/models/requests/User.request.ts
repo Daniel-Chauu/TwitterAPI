@@ -13,6 +13,9 @@ export interface RegisterBody {
 export interface LogoutBody {
   refresh_token: string
 }
+export interface RefreshTokenBody {
+  refresh_token: string
+}
 
 export interface ResetPasswordBody {
   password: string
@@ -33,6 +36,10 @@ export interface UpdateMeRequestBody {
 
 export interface FollowRequestBody {
   followed_user_id: string
+}
+
+export interface likeReqBody {
+  tweet_id: string
 }
 
 export interface changePasswordReqBody {

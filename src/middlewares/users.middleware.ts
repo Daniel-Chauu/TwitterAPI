@@ -284,7 +284,6 @@ const refreshTokenValidator = validate(
       refresh_token: {
         custom: {
           options: async (value: string, { req }) => {
-            console.log('🚀 ~ value:', value)
             if (!value)
               throw new ErrorWithStatus({
                 message: USER_MESSAGES.REFRESH_TOKEN_IS_REQUIRED,

@@ -15,6 +15,10 @@ const checkEmptyObj = (obj: object) => {
   return Object.keys(obj).length === 0
 }
 
+const isEmptyArr = <T>(arr: Array<T>) => {
+  return arr?.length === 0
+}
+
 const pick = <T>(obj: T, array: (keyof T)[]): Partial<T> => {
   const pickDate: Partial<T> = {}
   array.forEach((item) => {
@@ -25,4 +29,9 @@ const pick = <T>(obj: T, array: (keyof T)[]): Partial<T> => {
   return pickDate
 }
 
-export { logError, checkEmptyObj, pick }
+const omit = (obj: any, key: string) => {
+  const { [key]: omitKey, ...data } = obj
+  return data
+}
+
+export { logError, checkEmptyObj, isEmptyArr, pick, omit }

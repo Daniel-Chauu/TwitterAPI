@@ -6,6 +6,7 @@ import {
   FollowRequestBody,
   GetProfileRequestParams,
   LogoutBody,
+  RefreshTokenBody,
   RegisterBody,
   ResetPasswordBody,
   TokenPayload,
@@ -42,6 +43,12 @@ const userController = {
   logout: async (req: Request<ParamsDictionary, any, LogoutBody>, res: Response) => {
     const { decoded_refresh_token } = req
     const response = await userService.logout(decoded_refresh_token?.user_id as string)
+    res.status(HTTP_STATUS.OK).json(response)
+  },
+  refreshToken: async (req: Request<ParamsDictionary, any, RefreshTokenBody>, res: Response) => {
+    const { refresh_token } = req.body
+    const { verify, user_id } = req.decoded_refresh_token as TokenPayload
+    const response = await userService.refreshToken({ refresh_token, user_id, verify })
     res.status(HTTP_STATUS.OK).json(response)
   },
   verifyEmailToken: async (req: Request, res: Response) => {
@@ -100,7 +107,6 @@ const userController = {
   changePassword: async (req: Request<ParamsDictionary, any, changePasswordReqBody>, res: Response) => {
     const { user_id } = req.decoded_authorization as TokenPayload
     const { password } = req.body
-    console.log('==================CHECK==================')
     const response = await userService.changePassword({ user_id, new_password: password })
     res.status(HTTP_STATUS.OK).json(response)
   },

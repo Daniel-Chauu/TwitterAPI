@@ -23,6 +23,7 @@ const USER_MESSAGES = {
   ACCESS_TOKEN_IS_MALFORMED: 'Access token is malformed',
   REFRESH_TOKEN_IS_REQUIRED: 'Refresh token is required',
   REFRESH_TOKEN_IS_USED_OR_NOT_EXIST: 'Refresh token is used or not exist',
+  REFRESH_TOKEN_IS_SUCCESSFULLY: 'Refresh token is successfully',
   EMAIL_VERIFY_TOKEN_IS_REQUIRED: 'Email verify token is required',
   USER_NOT_FOUND: 'User not found',
   EMAIL_ALREADY_VERIFY_BEFORE: 'Email already verify before',
@@ -50,7 +51,40 @@ const USER_MESSAGES = {
   OLD_PASSWORD_IS_INCORRECT: 'Old password is incorrect',
   OLD_PASSWORD_IS_REQUIRED: 'Old password is required',
   UPDATE_PASSWORD_IS_SUCCESSFULLY: 'Update password is successfully',
-  GMAIL_NOT_VERIFIED: 'Gmail not verified'
+  GMAIL_NOT_VERIFIED: 'Gmail not verified',
+  UPLOAD_IMAGE_IS_SUCCESSFULLY: 'Upload image is successfully',
+  UPLOAD_VIDEO_IS_SUCCESSFULLY: 'Upload video is successfully',
+  RANGE_IS_REQUIRED: 'Range is required'
 } as const
 
-export { USER_MESSAGES }
+const TWEET_MESSAGE = {
+  INVALID_TYPE: 'Invalid type',
+  INVALID_AUDIENCE: 'Invalid audience',
+  PARENT_ID_MUST_BE_A_VALID_TWEET_ID: 'parent id must be a valid tweet id',
+  PARENT_ID_MUST_BE_NULL: 'parent id must be null',
+  CONTENT_MUST_BE_A_NON_EMPTY_STRING: 'Content must be a non empty string',
+  CONTENT_MUST_BE_A_EMPTY_STRING: 'Content must be a empty string',
+  HASHTAG_MUST_BE_AN_ARR_OF_STRING: 'Hashtags must be an array of string',
+  MENTIONS_MUST_BE_AN_ARR_OF_OBJECT_ID: 'Mentions must be an array of ObjectId',
+  MEDIAS_MUST_BE_AN_ARRAY_OF_MEDIA: 'Medias must be an array of Media',
+  CREATE_TWEET_SUCCESSFULLY: 'Create tweet is successfully',
+  TWEET_ID_MUST_BE_AN_OBJECT_ID: 'tweet_id must be an ObjectId ',
+  TWEET_ID_IS_REQUIRED: 'tweet_id is required',
+  TWEET_ID_DOES_NOT_EXIST: 'tweet_id does not exist',
+  YOU_MUST_BE_LOGGED_IN_TO_VIEW_THIS_TWEET: 'You must be logged in to view this tweet',
+  TWEET_IS_NOT_PUBLIC: 'Tweet is not public',
+  GET_TWEET_SUCCESSFULLY: 'Get tweet successfully'
+} as const
+
+const BOOKMARK_MESSAGE = {
+  BOOKMARK_SUCCESSFULLY: 'Bookmark successfully',
+  UNBOOKMARK_SUCCESSFULLY: 'Unbookmark successfully'
+} as const
+
+const LIKE_MESSAGE = {
+  LIKE_SUCCESSFULLY: 'Like successfully',
+  UNLIKE_SUCCESSFULLY: 'Unlike successfully',
+  YOU_HAVE_NOT_LIKE_THIS_POST: 'You have not like this post'
+}
+
+export { USER_MESSAGES, TWEET_MESSAGE, BOOKMARK_MESSAGE, LIKE_MESSAGE }

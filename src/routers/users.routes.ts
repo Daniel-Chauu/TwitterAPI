@@ -29,6 +29,8 @@ userRouter.get('/oauth/google', wrapRequestHandler(userController.oauth))
 
 userRouter.post('/logout', accessTokenValidator, refreshTokenValidator, wrapRequestHandler(userController.logout))
 
+userRouter.post('/refresh-token', refreshTokenValidator, userController.refreshToken)
+
 userRouter.post('/verify-email', emailVerifyTokenValidator, wrapRequestHandler(userController.verifyEmailToken))
 
 userRouter.post('/resend-verify-email', accessTokenValidator, wrapRequestHandler(userController.resendVerifyEmailToken))
